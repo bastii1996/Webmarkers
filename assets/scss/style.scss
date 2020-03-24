@@ -1,0 +1,326 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('../icon-font/font/fontello.eot');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$primary-color: #ec1c24;
+$font-stack: 'Roboto',
+sans-serif;
+body {
+    font-family: $font-stack !important;
+    padding: 0;
+    margin: 0;
+}
+
+li,
+ol,
+ul {
+    list-style-type: none;
+}
+
+* {
+    box-sizing: border-box
+}
+
+a {
+    text-decoration: none;
+}
+
+.container-fluid {
+    display: flex;
+    padding: 0 !important;
+    @media screen and (min-width: 320px) and (max-width: 767px) {
+        display: block;
+    }
+}
+
+.header {
+    &-square {
+        max-width: 441px;
+        height: 100px;
+        background-color: $primary-color;
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            margin: 0 auto;
+        }
+    }
+    &-content {
+        padding: 25px 0 0 10px;
+        p {
+            font-size: 1.68vh;
+            line-height: 25px;
+            font-weight: 100;
+            color: #595959;
+            @media screen and (min-width: 320px) and (max-width: 767px) {
+                max-width: 441px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.hero {
+    margin-top: 10px;
+    &-accordian {
+        width: 60%;
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            width: 100%;
+        }
+        &-title {
+            padding-left: calc( (100vw - 1170px) / 2);
+            margin-bottom: 4.5rem;
+            @media screen and (min-width: 992px) and (max-width: 1200px) {
+                padding-left: calc( (100vw - 930px) / 2);
+            }
+            @media screen and (min-width: 768px) and (max-width: 992px) {
+                padding-left: calc( (100vw - 750px) / 2);
+            }
+            h2 {
+                font-size: 5.8vh;
+                font-weight: 100;
+                color: #333;
+                margin: 0;
+                position: relative;
+                @media screen and (min-width: 320px) and (max-width: 767px) {
+                    font-size: 4vh;
+                }
+                &:before {
+                    content: 'faq';
+                    display: block;
+                    font-size: 18vh;
+                    font-weight: 900;
+                    color: #eee;
+                }
+                span {
+                    position: absolute;
+                    bottom: 0px;
+                    left: 85px;
+                    @media screen and (min-width: 768px) and (max-width: 992px) {
+                        left: 50px;
+                    }
+                    @media screen and (min-width: 320px) and (max-width: 767px) {
+                        left: 25px;
+                    }
+                }
+            }
+        }
+        &-list {
+            ul {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+            }
+            .accordian-item {
+                counter-increment: item;
+                font-size: 1.92vh;
+                font-weight: 100;
+                color: #333333;
+                padding-bottom: 10px;
+                padding-top: 10px;
+                padding-left: calc( (100vw - 1170px) / 2);
+                position: relative;
+                cursor: pointer;
+                @media screen and (min-width: 992px) and (max-width: 1200px) {
+                    padding-left: calc( (100vw - 930px) / 2);
+                }
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    padding-left: calc( (100vw - 750px) / 2);
+                    font-size: 1.5vh;
+                }
+                @media screen and (min-width: 320px) and (max-width: 767px) {
+                    padding-left: 15px;
+                }
+                span {
+                    padding-left: 20px;
+                    color: #333;
+                    @media screen and (min-width: 320px) and (max-width: 767px) {
+                        max-width: 70%;
+                        display: block;
+                        float: left;
+                        padding-left: 10px;
+                    }
+                }
+                &:before {
+                    counter-increment: li;
+                    content: counter(item, decimal-leading-zero);
+                    border-right: 1px solid #d3d3d3;
+                    padding-right: 20px;
+                    font-size: 2.2vh;
+                    font-weight: 100;
+                    @media screen and (min-width: 320px) and (max-width: 767px) {
+                        padding-right: 15px;
+                        float: left;
+                    }
+                }
+                &:after {
+                    content: '\e800';
+                    font-family: fontello;
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    top: 9px;
+                    margin-right: 100px;
+                    font-size: 30px;
+                    max-height: 24px;
+                    color: $primary-color;
+                    @media screen and (min-width: 992px) and (max-width: 1200px) {
+                        top: 6px;
+                        margin-right: 45px;
+                    }
+                    @media screen and (min-width: 768px) and (max-width: 992px) {
+                        margin-right: 35px;
+                    }
+                    @media screen and (min-width: 320px) and (max-width: 767px) {
+                        margin-right: 10px;
+                        top: 0px;
+                    }
+                }
+                &-body {
+                    max-height: 0;
+                    margin-bottom: 10px;
+                    padding: 20px 20px 0px 67px;
+                    overflow: hidden;
+                    transition: .4s;
+                    @media screen and (min-width: 768px) and (max-width: 992px) {
+                        padding: 20px 20px 0px 60px;
+                    }
+                    @media screen and (min-width: 320px) and (max-width: 767px) {
+                        padding: 50px 43px 0px 43px;
+                    }
+                }
+            }
+            .active {
+                background-color: #f6f6f6;
+                &:hover {
+                    background-color: $primary-color;
+                    transition: .4s;
+                    &:before {
+                        color: #000;
+                    }
+                    .accordian-item-body p {
+                        color: #000;
+                    }
+                    span {
+                        color: #000;
+                    }
+                }
+                &:before {
+                    color: $primary-color;
+                    transition: .1s;
+                    font-weight: 400;
+                }
+                &:after {
+                    content: '\e801';
+                    transition: .2s;
+                    color: #000;
+                }
+                span {
+                    font-weight: 400;
+                    transition: .1s;
+                }
+                .accordian-item-body {
+                    overflow: visible;
+                    max-height: 200px;
+                    transition: .4s;
+                    p {
+                        font-size: 1.68vh;
+                        line-height: 25px;
+                        font-weight: 100;
+                        max-width: 550px;
+                        color: #595959;
+                        @media screen and (min-width: 992px) and (max-width: 1200px) {
+                            max-width: 420px;
+                        }
+                        @media screen and (min-width: 768px) and (max-width: 992px) {
+                            max-width: 300px;
+                            font-size: 1.5vh;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-files {
+        width: 40%;
+        background-color: black;
+        color: white;
+        padding-right: calc((100vw - 1170px) / 2);
+        border-top-left-radius: 25px;
+        @media screen and (min-width: 992px) and (max-width: 1200px) {
+            padding-right: calc((100vw - 930px) / 2);
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px) {
+            padding-right: calc((100vw - 750px) / 2);
+        }
+        @media screen and (min-width: 320px) and (max-width: 767px) {
+            width: 100%;
+            border-top-left-radius: unset;
+            padding-bottom: 50px;
+            z-index: 9999;
+            position: relative;
+        }
+        &-title {
+            margin-bottom: 30px;
+            h3 {
+                font-size: 4.3vh;
+                max-width: 350px;
+                font-weight: 400;
+                line-height: 54px;
+                padding: 54px 0 0 36px;
+                margin: 0;
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    padding-left: 25px;
+                }
+                @media screen and (min-width: 320px) and (max-width: 767px) {
+                    padding-right: 36px;
+                }
+                span {
+                    font-weight: 300;
+                }
+            }
+        }
+        &-list {
+            ul {
+                padding-left: 36px;
+                @media screen and (min-width: 768px) and (max-width: 992px) {
+                    padding-left: 25px;
+                }
+                @media screen and (min-width: 320px) and (max-width: 767px) {
+                    padding-right: 36px;
+                }
+                li {
+                    font-size: 1.93vh;
+                    line-height: 55px;
+                    border-bottom: 2px solid #2e2d2d;
+                    position: relative;
+                    cursor: pointer;
+                    font-weight: 300;
+                    &:after {
+                        content: '\e802';
+                        font-family: fontello;
+                        display: inline-block;
+                        font-size: 23px;
+                        max-height: 30px;
+                        color: #fff;
+                        float: right;
+                    }
+                    &:hover:after {
+                        color: $primary-color;
+                        transition: .4s;
+                    }
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    height: 375px;
+    background-color: #ebebeb;
+}
